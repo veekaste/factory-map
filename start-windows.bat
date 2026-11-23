@@ -2,8 +2,8 @@
 rem Factory Map website: double-click to set up (first time) and start. Keep the window open while you play.
 cd /d "%~dp0web"
 set "PY="
-where py >/dev/null 2>/dev/null && set "PY=py -3"
-if not defined PY python -c "import sys" >/dev/null 2>/dev/null && set "PY=python"
+python -c "import sys" >nul 2>nul && set "PY=python"
+if not defined PY py -3 -c "import sys" >nul 2>nul && set "PY=py -3"
 if not defined PY (
   echo Python is not installed. Get it from https://www.python.org/downloads/ and run this again.
   pause
